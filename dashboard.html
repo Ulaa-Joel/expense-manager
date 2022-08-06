@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager</title>
+    <link rel="stylesheet" href="./dash.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="main container">
+        <div class="header">
+            <div class="header-container">
+                <h2> Expense Manager</h2>
+                <div class="header-button">
+                    <button class="btn">Profile</button>
+                    <button class="btn">Logout</button>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="body-container">
+                <div class="left">
+                    <div class="left-top">
+                        <p>Filter Expenses</p>
+                        <p><a href="">Clear Filters</a></p>
+                    </div>
+                    <div class="form">
+                        <label for="start" class="label">From</label><br>
+                        <input type="date" data-date-inline-picker="true" id="start" class="input"><br>
+                        <label for="end" class="label">To</label><br>
+                        <input type="date" data-date-inline-picker="true" id="end" class="input"><br>
+                        <div class="min">
+                            <div>
+                                <label for="min" class="label">Min</label><br>
+                                <input type="text" id="min" class="input">
+                            </div>
+                            <div>
+                                <label for="max" class="label">Max</label><br>
+                                <input type="text" id="max" class="input">
+                            </div>
+                        </div>
+                        <label for="merchant" class="label">Merchant</label><br>
+                        <select name="merchant" id="merchant" class="select">
+                            <option value=""></option>
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Fastfood">Fastfood</option>
+                            <option value="Hotel">Hotel</option>
+                            <option value="Taxi">Taxi</option>
+                        </select><br>
+                        <label for="status" class="label">Status</label><br>
+                        <input type="checkbox" id="new"> New   <input type="checkbox" id="in-progress"> In Progress
+                        <input type="checkbox" id="Reimbursed"> Reimbursed
+                    </div>
+                </div>
+                <div class="center">
+                    <table id="table" class="table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Merchant</th>
+                                <th>Total</th>
+                                <th>Comment</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- <button type="button" id="updateButton" onclick="inputUpdate();"><p>+</p></button> -->
+                        <!-- <div class="popup" onclick="myFunction();"><a id="updateButton">+</a> -->
+                        <a class="popup" id="updateButton" href="">+</a>
+                            <div class="popupdata" id="myPopup">
+                                <div class="popup-content">
+                                    <div class="left-popup">
+                                        <h3>Add Expense</h3>
+                                        <label for="merchant" class="label">Merchant</label><br>
+                                        <select name="merchant" id="merchant" class="select">
+                                            <option value=""></option>
+                                            <option value="Breakfast" id="merchant">Breakfast</option>
+                                            <option value="Fastfood" id="merchant">Fastfood</option>
+                                            <option value="Hotel" id="merchant">Hotel</option>
+                                            <option value="Taxi" id="merchant">Taxi</option>
+                                        </select><br>
+                                        <label for="total" class="label">Total</label><br>
+                                        <input type="text" placeholder="$" id="total" class="input"><br>
+                                        <label for="date" class="label">Date</label><br>
+                                        <input type="date" data-date-inline-picker="true" id="date" class="input"><br>
+                                        <label for="comment" class="label">Comment</label><br>
+                                        <input type="text" id="comment"><br>
+                                        <button type="button" class="btn" id="save" onclick="inputUpdate();">Save</button>
+                                        <button class="btn" id="cancel">Cancel</button>
+                                    </div>
+                                    <div class="right-popup">
+                                        <button class="btn" id="cancel">Select Receipt</button>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- </div> -->
+                </div>
+                <div class="right">
+                    <p>To be reimbursed</p>
+                    <div>$1250.01</div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
